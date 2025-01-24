@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moving News Bar</title>
+    <title>Double Sidebar Page</title>
     <style>
         @font-face {
             font-family: 'FedraDisplayArabic';
@@ -134,7 +134,6 @@
 
         .sidebar {
             position: fixed;
-            left: 0;
             top: 70px;
             width: 100px;
             height: calc(100% - 70px);
@@ -145,6 +144,14 @@
             align-items: center;
             padding: 10px 0;
             gap: 10px;
+        }
+
+        .left-sidebar {
+            left: 0;
+        }
+
+        .right-sidebar {
+            right: 0;
         }
 
         .sidebar-block {
@@ -193,7 +200,20 @@
         </div>
     </div>
 
-    <div class="sidebar">
+    <div class="sidebar left-sidebar">
+        <a href="https://example.com/electronic-registration" class="sidebar-block">التسجيل الالكتروني</a>
+        <a href="https://example.com/virtual-classes" class="sidebar-block">الحصص الاقتراضية</a>
+        <a href="https://example.com/statistics" class="sidebar-block">احصائيات</a>
+        <a href="https://example.com/additional-courses" class="sidebar-block">كورسات اضافية</a>
+        <a href="https://example.com/training-materials" class="sidebar-block">حقائب التدريب</a>
+        <a href="https://example.com/discussions" class="sidebar-block">مناقشات</a>
+        <a href="https://example.com/question-banks" class="sidebar-block">بنوك الاسئلة</a>
+        <a href="https://example.com/attendance-reports" class="sidebar-block">تقارير الغياب</a>
+        <a href="https://example.com/your-ideas" class="sidebar-block">المعلمين</a>
+        <a href="https://example.com/exam-reports" class="sidebar-block">تفارير الاختبارات</a>
+    </div>
+
+    <div class="sidebar right-sidebar">
         <a href="https://example.com/electronic-registration" class="sidebar-block">التسجيل الالكتروني</a>
         <a href="https://example.com/virtual-classes" class="sidebar-block">الحصص الاقتراضية</a>
         <a href="https://example.com/statistics" class="sidebar-block">احصائيات</a>
@@ -208,25 +228,26 @@
 
     <div class="content">
         <h1>اهلا بكم في مدرسة المشكاة</h1>
+        <img src="5aa.jpg" alt="مدرسة المشكاة" style="width: 80%; margin: 20px auto; display: block;">
         <img src="school-image.jpg" alt="صورة المدرسة">
-        <p>قم بتسجيل الدخول و استكشف المزيد!</p>
+        <p> استكشف المزيد</p>
     </div>
 
     <div class="news-blocks">
         <div class="news-block">
-            <h3>خبر عاجل 1</h3>
+            <h3>انجازات</h3>
             <p>الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.</p>
         </div>
         <div class="news-block">
-            <h3>خبر عاجل 2</h3>
+            <h3>باب التسجيل 2</h3>
             <p>بدء تسجيل العام الدراسي الجديد الأسبوع المقبل.</p>
         </div>
         <div class="news-block">
-            <h3>خبر عاجل 3</h3>
+            <h3> مكتبة جديدة</h3>
             <p>افتتاح مكتبة جديدة تحتوي على أحدث الكتب العلمية.</p>
         </div>
         <div class="news-block">
-            <h3>خبر عاجل 4</h3>
+            <h3>تكريم المعلمين</h3>
             <p>تكريم المعلمين المتميزين في حفل نهاية العام.</p>
         </div>
     </div>
