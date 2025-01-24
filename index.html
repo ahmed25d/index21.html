@@ -90,6 +90,19 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            animation: moveBlocks 6s ease-in-out infinite alternate; /* Add animation */
+        }
+
+        @keyframes moveBlocks {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
 
         .news-block h3 {
