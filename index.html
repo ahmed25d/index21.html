@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moving News Bar</title>
     <style>
+        @font-face {
+            font-family: 'FedraDisplayArabic';
+            src: url('FedraDisplayArabic.woff2') format('woff2'),
+                 url('FedraDisplayArabic.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             margin: 0;
-            font-family: DG Forsha, DG Forsha;
+            font-family: Arial, sans-serif;
             text-align: center;
         }
 
@@ -52,6 +60,12 @@
             height: auto;
             display: block;
             margin: 0 auto; /* Center the image */
+        }
+
+        .content h1 {
+            font-family: 'FedraDisplayArabic', Arial, sans-serif;
+            font-size: 4.5em;
+            color: #333;
         }
 
         .news-blocks {
