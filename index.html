@@ -69,4 +69,166 @@
             color: #342628;
         }
 
-  
+        .news-blocks {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            max-width: 80%;
+            margin: 40px auto;
+        }
+
+        .news-block {
+            width: 5cm;
+            height: 5cm;
+            background-color: #8CBDB9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: switchBlocks 8s infinite ease-in-out;
+        }
+
+        @keyframes switchBlocks {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(120%);
+            }
+            50% {
+                transform: translateX(0);
+            }
+            75% {
+                transform: translateX(-120%);
+            }
+        }
+
+        .news-block:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .news-block:nth-child(3) {
+            animation-delay: 4s;
+        }
+
+        .news-block:nth-child(4) {
+            animation-delay: 6s;
+        }
+
+        .news-block h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #788402;
+        }
+
+        .news-block p {
+            font-size: 14px;
+            color: #D96846;
+            margin-top: 10px;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 70px;
+            width: 100px;
+            height: calc(100% - 70px);
+            background-color: #342628;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            gap: 10px;
+        }
+
+        .sidebar-block {
+            width: 80px;
+            height: 80px;
+            background-color: #8CBDB9;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .external-link {
+            margin-top: 40px;
+            font-size: 18px;
+        }
+
+        .external-link a {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .external-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="news-bar">
+        <div class="news-bar-content">
+            <span>اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!</span>
+            <span>احدث الفعاليات: انشطة منتوعة و ابداع متجدد!</span>
+            <span>Weather Alert: Heavy rain expected in some areas tomorrow.</span>
+            <span>Sports: Local team wins the championship!</span>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-block">Block 1</div>
+        <div class="sidebar-block">Block 2</div>
+        <div class="sidebar-block">Block 3</div>
+        <div class="sidebar-block">Block 4</div>
+        <div class="sidebar-block">Block 5</div>
+        <div class="sidebar-block">Block 6</div>
+        <div class="sidebar-block">Block 7</div>
+        <div class="sidebar-block">Block 8</div>
+        <div class="sidebar-block">Block 9</div>
+        <div class="sidebar-block">Block 10</div>
+    </div>
+
+    <div class="content">
+        <h1>اهلا بكم في مدرسة المشكاة</h1>
+        <img src="school-image.jpg" alt="صورة المدرسة">
+        <p>قم بتسجيل الدخول و استكشف المزيد!</p>
+    </div>
+
+    <div class="news-blocks">
+        <div class="news-block">
+            <h3>خبر عاجل 1</h3>
+            <p>الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.</p>
+        </div>
+        <div class="news-block">
+            <h3>خبر عاجل 2</h3>
+            <p>بدء تسجيل العام الدراسي الجديد الأسبوع المقبل.</p>
+        </div>
+        <div class="news-block">
+            <h3>خبر عاجل 3</h3>
+            <p>افتتاح مكتبة جديدة تحتوي على أحدث الكتب العلمية.</p>
+        </div>
+        <div class="news-block">
+            <h3>خبر عاجل 4</h3>
+            <p>تكريم المعلمين المتميزين في حفل نهاية العام.</p>
+        </div>
+    </div>
+
+    <div class="external-link">
+        <p>قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
+        <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank">اضغط هنا لتسجيل الدخول</a>
+    </div>
+</body>
+</html>
