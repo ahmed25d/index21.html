@@ -223,19 +223,23 @@
 
     <div class="news-bar">
         <div class="news-bar-content">
-            <span>اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!</span>
-            <span>احدث الفعاليات: انشطة منتوعة و ابداع متجدد!</span>
-            <span>Weather Alert: Heavy rain expected in some areas tomorrow.</span>
-            <span>Sports: Local team wins the championship!</span>
+            <span class="news-1">اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!</span>
+            <span class="news-2">احدث الفعاليات: انشطة منتوعة و ابداع متجدد!</span>
+            <span class="news-3">Weather Alert: Heavy rain expected in some areas tomorrow.</span>
+            <span class="news-4">Sports: Local team wins the championship!</span>
         </div>
     </div>
 
     <div class="sidebar left-sidebar">
-        <!-- Add left sidebar blocks here -->
+        <div class="sidebar-block" data-en="Academics" data-ar="الاكاديميات"></div>
+        <div class="sidebar-block" data-en="Events" data-ar="الفعاليات"></div>
+        <div class="sidebar-block" data-en="Contact" data-ar="اتصل بنا"></div>
     </div>
 
     <div class="sidebar right-sidebar">
-        <!-- Add right sidebar blocks here -->
+        <div class="sidebar-block" data-en="Library" data-ar="المكتبة"></div>
+        <div class="sidebar-block" data-en="Admissions" data-ar="القبول"></div>
+        <div class="sidebar-block" data-en="Support" data-ar="الدعم"></div>
     </div>
 
     <div class="content">
@@ -244,29 +248,74 @@
 
     <div class="news-blocks">
         <div class="news-block">
-            <h3>انجازات</h3>
-            <p>الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.</p>
+            <h3 class="achievement-title">انجازات</h3>
+            <p class="achievement-text">الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.</p>
         </div>
-        <!-- Add more blocks here -->
     </div>
 
     <div class="external-link">
-        <p>قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
-        <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank">اضغط هنا لتسجيل الدخول</a>
+        <p class="external-text">قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
+        <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank" class="external-link-text">اضغط هنا لتسجيل الدخول</a>
     </div>
 
     <script>
         function toggleLanguage() {
             const html = document.documentElement;
-            if (html.lang === 'ar') {
-                html.lang = 'en';
-                document.body.style.fontFamily = 'Arial, sans-serif';
-                document.querySelector('.content h1').textContent = 'Welcome to Al-Mishkat School';
-            } else {
-                html.lang = 'ar';
-                document.body.style.fontFamily = 'FedraDisplayArabic, sans-serif';
-                document.querySelector('.content h1').textContent = 'اهلا بكم في مدرسة المشكاة';
+            const languageText = html.lang === 'ar' ? 'en' : 'ar';
+            html.lang = languageText;
+
+            const elements = {
+                "content h1": {
+                    "ar": "اهلا بكم في مدرسة المشكاة",
+                    "en": "Welcome to Al-Mishkat School"
+                },
+                ".news-1": {
+                    "ar": "اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!",
+                    "en": "Latest News: School wins first place in the olympiad!"
+                },
+                ".news-2": {
+                    "ar": "احدث الفعاليات: انشطة منتوعة و ابداع متجدد!",
+                    "en": "Upcoming events: Diverse activities and renewed creativity!"
+                },
+                ".news-3": {
+                    "ar": "Weather Alert: Heavy rain expected in some areas tomorrow.",
+                    "en": "Weather Alert: Heavy rain expected in some areas tomorrow."
+                },
+                ".news-4": {
+                    "ar": "Sports: Local team wins the championship!",
+                    "en": "Sports: Local team wins the championship!"
+                },
+                ".achievement-title": {
+                    "ar": "انجازات",
+                    "en": "Achievements"
+                },
+                ".achievement-text": {
+                    "ar": "الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.",
+                    "en": "Students achieve amazing accomplishments in summer activities."
+                },
+                ".external-text": {
+                    "ar": "قم بزيارة صفحة تسجيل الدخول الخاصة بنا:",
+                    "en": "Visit our login page:"
+                },
+                ".external-link-text": {
+                    "ar": "اضغط هنا لتسجيل الدخول",
+                    "en": "Click here to log in"
+                }
+            };
+
+            // Update all elements
+            for (const selector in elements) {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.textContent = elements[selector][languageText];
+                }
             }
+
+            // Update sidebar blocks
+            const sidebarBlocks = document.querySelectorAll('.sidebar-block');
+            sidebarBlocks.forEach(block => {
+                block.textContent = block.getAttribute(`data-${languageText}`);
+            });
         }
     </script>
 </body>
