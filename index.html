@@ -132,7 +132,7 @@
             width: 70px;
             height: calc(100% - 70px);
             background-color: #342628;
-            overflow-y: auto; /* Enable scrolling */
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -209,14 +209,14 @@
         /* Rectangle Blocks */
         .rectangle-blocks {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            justify-content: space-between;
             margin: 40px auto;
             padding: 20px;
+            max-width: 100%;
         }
 
         .rectangle-block {
-            width: 5cm;
+            width: 7cm;
             height: 12cm;
             background-color: #2196F3;
             border: 2px solid #ccc;
@@ -346,4 +346,18 @@
                     "en": "Latest News: School wins first place in the olympiad!"
                 },
                 ".news-2": {
-                    "ar": "احدث الفعاليات: انشطة منتوعة و ابداع مت
+                    "ar": "احدث الفعاليات: انشطة منتوعة و ابداع متجدد!",
+                    "en": "Latest Events: Diverse activities and renewed creativity!"
+                }
+            };
+
+            for (let selector in elements) {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.textContent = elements[selector][languageText];
+                }
+            }
+        }
+    </script>
+</body>
+</html>
