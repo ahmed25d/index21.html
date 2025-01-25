@@ -20,6 +20,32 @@
             background-color: #d70e1d;
         }
 
+        .language-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1100;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-toggle:hover {
+            background-color: #f0f0f0;
+        }
+
+        .language-toggle img {
+            width: 30px;
+            height: 30px;
+        }
+
         .news-bar {
             background-color: #555;
             color: yellow;
@@ -91,7 +117,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            animation: switchBlocks 6s infinite ease-in-out;
         }
 
         .news-block h3 {
@@ -196,6 +221,11 @@
     </style>
 </head>
 <body>
+    <!-- Language Toggle Button -->
+    <div class="language-toggle" onclick="toggleLanguage()">
+        <img src="https://cdn-icons-png.flaticon.com/512/3872/3872596.png" alt="Switch Language">
+    </div>
+
     <div class="news-bar">
         <div class="news-bar-content">
             <span>اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!</span>
@@ -258,5 +288,20 @@
         <p>قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
         <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank">اضغط هنا لتسجيل الدخول</a>
     </div>
+
+    <script>
+        function toggleLanguage() {
+            const html = document.documentElement;
+            if (html.lang === 'ar') {
+                html.lang = 'en';
+                document.body.style.fontFamily = 'Arial, sans-serif';
+                document.querySelector('.content h1').textContent = 'Welcome to Al-Mishkat School';
+            } else {
+                html.lang = 'ar';
+                document.body.style.fontFamily = 'FedraDisplayArabic, sans-serif';
+                document.querySelector('.content h1').textContent = 'اهلا بكم في مدرسة المشكاة';
+            }
+        }
+    </script>
 </body>
 </html>
