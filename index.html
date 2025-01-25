@@ -365,3 +365,38 @@
     </div>
 
     <script>
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const allSidebarBlocks = document.querySelectorAll('.sidebar-block');
+            const heading = document.querySelector('.heading');
+            const newsTitle = document.querySelector('.achievement-title');
+            const newsText = document.querySelector('.achievement-text');
+            const externalText = document.querySelector('.external-text');
+            const externalLinkText = document.querySelector('.external-link-text');
+            
+            if (html.lang === 'ar') {
+                html.lang = 'en';
+                document.body.style.fontFamily = 'Arial, sans-serif';
+                heading.textContent = 'Welcome to Al-Mishkat School';
+                newsTitle.textContent = 'Achievements';
+                newsText.textContent = 'Students achieve great successes in summer activities.';
+                externalText.textContent = 'Visit our login page:';
+                externalLinkText.textContent = 'Click here to login';
+            } else {
+                html.lang = 'ar';
+                document.body.style.fontFamily = 'FedraDisplayArabic, sans-serif';
+                heading.textContent = 'اهلا بكم في مدرسة المشكاة';
+                newsTitle.textContent = 'انجازات';
+                newsText.textContent = 'الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.';
+                externalText.textContent = 'قم بزيارة صفحة تسجيل الدخول الخاصة بنا:';
+                externalLinkText.textContent = 'اضغط هنا لتسجيل الدخول';
+            }
+
+            allSidebarBlocks.forEach(block => {
+                const currentLang = html.lang;
+                block.textContent = block.getAttribute(`data-${currentLang}`);
+            });
+        }
+    </script>
+</body>
+</html>
