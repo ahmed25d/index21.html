@@ -25,25 +25,16 @@
             top: 10px;
             right: 10px;
             z-index: 1100;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        }
+
+        .language-toggle button {
+            padding: 10px 15px;
+            font-size: 16px;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .language-toggle:hover {
-            background-color: #f0f0f0;
-        }
-
-        .language-toggle img {
-            width: 30px;
-            height: 30px;
+            background-color: #e0fc0a;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
         }
 
         .news-bar {
@@ -221,87 +212,108 @@
     </style>
 </head>
 <body>
-    <!-- Language Toggle Button -->
-    <div class="language-toggle" onclick="toggleLanguage()">
-        <img src="https://cdn-icons-png.flaticon.com/512/3872/3872596.png" alt="Switch Language">
+    <div class="language-toggle">
+        <button id="language-toggle-btn">Switch to English</button>
     </div>
 
     <div class="news-bar">
-        <div class="news-bar-content">
+        <div class="news-bar-content" id="news-bar-content">
             <span>اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!</span>
             <span>احدث الفعاليات: انشطة منتوعة و ابداع متجدد!</span>
-            <span>Weather Alert: Heavy rain expected in some areas tomorrow.</span>
-            <span>Sports: Local team wins the championship!</span>
+            <span>تحذير الطقس: أمطار غزيرة متوقعة غداً في بعض المناطق.</span>
+            <span>الرياضة: الفريق المحلي يفوز بالبطولة!</span>
         </div>
     </div>
 
-    <div class="sidebar left-sidebar">
-        <a href="https://example.com/electronic-registration" class="sidebar-block">التسجيل الالكتروني</a>
-        <a href="https://example.com/virtual-classes" class="sidebar-block">الحصص الاقتراضية</a>
-        <a href="https://example.com/statistics" class="sidebar-block">احصائيات</a>
-        <a href="https://example.com/additional-courses" class="sidebar-block">كورسات اضافية</a>
-        <a href="https://example.com/training-materials" class="sidebar-block">حقائب التدريب</a>
-        <a href="https://example.com/discussions" class="sidebar-block">مناقشات</a>
-        <a href="https://example.com/question-banks" class="sidebar-block">بنوك الاسئلة</a>
-        <a href="https://example.com/attendance-reports" class="sidebar-block">تقارير الغياب</a>
-        <a href="https://example.com/your-ideas" class="sidebar-block">المعلمين</a>
-        <a href="https://example.com/exam-reports" class="sidebar-block">تقارير الاختبارات</a>
+    <div class="sidebar left-sidebar" id="left-sidebar">
+        <a href="#" class="sidebar-block">التسجيل الالكتروني</a>
+        <a href="#" class="sidebar-block">الحصص الاقتراضية</a>
+        <a href="#" class="sidebar-block">احصائيات</a>
+        <a href="#" class="sidebar-block">كورسات اضافية</a>
     </div>
 
-    <div class="sidebar right-sidebar">
-        <a href="https://example.com/electronic-registration" class="sidebar-block">التسجيل الالكتروني</a>
-        <a href="https://example.com/virtual-classes" class="sidebar-block">الحصص الاقتراضية</a>
-        <a href="https://example.com/statistics" class="sidebar-block">احصائيات</a>
-        <a href="https://example.com/additional-courses" class="sidebar-block">كورسات اضافية</a>
-        <a href="https://example.com/training-materials" class="sidebar-block">حقائب التدريب</a>
-        <a href="https://example.com/discussions" class="sidebar-block">مناقشات</a>
-        <a href="https://example.com/question-banks" class="sidebar-block">بنوك الاسئلة</a>
-        <a href="https://example.com/attendance-reports" class="sidebar-block">تقارير الغياب</a>
-        <a href="https://example.com/your-ideas" class="sidebar-block">المعلمين</a>
-        <a href="https://example.com/exam-reports" class="sidebar-block">تقارير الاختبارات</a>
+    <div class="sidebar right-sidebar" id="right-sidebar">
+        <a href="#" class="sidebar-block">بنوك الأسئلة</a>
+        <a href="#" class="sidebar-block">تقارير الغياب</a>
+        <a href="#" class="sidebar-block">تقارير الاختبارات</a>
+        <a href="#" class="sidebar-block">المعلمون</a>
     </div>
 
     <div class="content">
-        <h1>اهلا بكم في مدرسة المشكاة</h1>
+        <h1 id="main-heading">اهلا بكم في مدرسة المشكاة</h1>
     </div>
 
-    <div class="news-blocks">
+    <div class="news-blocks" id="news-blocks">
         <div class="news-block">
             <h3>انجازات</h3>
             <p>الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.</p>
         </div>
         <div class="news-block">
-            <h3>باب التسجيل 2</h3>
+            <h3>التسجيل</h3>
             <p>بدء تسجيل العام الدراسي الجديد الأسبوع المقبل.</p>
         </div>
-        <div class="news-block">
-            <h3> مكتبة جديدة</h3>
-            <p>افتتاح مكتبة جديدة تحتوي على أحدث الكتب العلمية.</p>
-        </div>
-        <div class="news-block">
-            <h3>تكريم المعلمين</h3>
-            <p>تكريم المعلمين المتميزين في حفل نهاية العام.</p>
-        </div>
-    </div>
-
-    <div class="external-link">
-        <p>قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
-        <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank">اضغط هنا لتسجيل الدخول</a>
     </div>
 
     <script>
-        function toggleLanguage() {
-            const html = document.documentElement;
-            if (html.lang === 'ar') {
-                html.lang = 'en';
-                document.body.style.fontFamily = 'Arial, sans-serif';
-                document.querySelector('.content h1').textContent = 'Welcome to Al-Mishkat School';
-            } else {
-                html.lang = 'ar';
-                document.body.style.fontFamily = 'FedraDisplayArabic, sans-serif';
-                document.querySelector('.content h1').textContent = 'اهلا بكم في مدرسة المشكاة';
+        const translations = {
+            en: {
+                "news-bar": [
+                    "Latest News: The school ranks first in the Olympics!",
+                    "Latest Events: Diverse activities and renewed creativity!",
+                    "Weather Alert: Heavy rain expected in some areas tomorrow.",
+                    "Sports: Local team wins the championship!"
+                ],
+                "left-sidebar": ["E-Registration", "Virtual Classes", "Statistics", "Additional Courses"],
+                "right-sidebar": ["Question Banks", "Attendance Reports", "Exam Reports", "Teachers"],
+                "main-heading": "Welcome to Al-Mishkat School",
+                "news-blocks": [
+                    { title: "Achievements", description: "Students achieve amazing results in summer activities." },
+                    { title: "Registration", description: "Registration for the new academic year starts next week." }
+                ]
+            },
+            ar: {
+                "news-bar": [
+                    "اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!",
+                    "احدث الفعاليات: انشطة منتوعة و ابداع متجدد!",
+                    "تحذير الطقس: أمطار غزيرة متوقعة غداً في بعض المناطق.",
+                    "الرياضة: الفريق المحلي يفوز بالبطولة!"
+                ],
+                "left-sidebar": ["التسجيل الالكتروني", "الحصص الاقتراضية", "احصائيات", "كورسات اضافية"],
+                "right-sidebar": ["بنوك الأسئلة", "تقارير الغياب", "تقارير الاختبارات", "المعلمون"],
+                "main-heading": "اهلا بكم في مدرسة المشكاة",
+                "news-blocks": [
+                    { title: "انجازات", description: "الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية." },
+                    { title: "التسجيل", description: "بدء تسجيل العام الدراسي الجديد الأسبوع المقبل." }
+                ]
             }
-        }
+        };
+
+        let currentLang = "ar";
+
+        document.getElementById("language-toggle-btn").addEventListener("click", () => {
+            currentLang = currentLang === "ar" ? "en" : "ar";
+            const langData = translations[currentLang];
+            
+            document.getElementById("news-bar-content").innerHTML = langData["news-bar"].map(news => `<span>${news}</span>`).join("");
+
+            const leftSidebar = document.getElementById("left-sidebar");
+            const rightSidebar = document.getElementById("right-sidebar");
+
+            leftSidebar.querySelectorAll(".sidebar-block").forEach((block, i) => block.textContent = langData["left-sidebar"][i]);
+            rightSidebar.querySelectorAll(".sidebar-block").forEach((block, i) => block.textContent = langData["right-sidebar"][i]);
+
+            document.getElementById("main-heading").textContent = langData["main-heading"];
+
+            const newsBlocks = document.getElementById("news-blocks");
+            newsBlocks.innerHTML = langData["news-blocks"].map(block => `
+                <div class="news-block">
+                    <h3>${block.title}</h3>
+                    <p>${block.description}</p>
+                </div>
+            `).join("");
+
+            document.getElementById("language-toggle-btn").textContent = currentLang === "ar" ? "Switch to English" : "التبديل إلى العربية";
+        });
     </script>
 </body>
 </html>
