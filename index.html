@@ -183,6 +183,29 @@
             text-decoration: underline;
         }
 
+        /* Square Blocks */
+        .square-blocks {
+            display: grid;
+            grid-template-columns: repeat(2, 5cm); /* Two columns of 5cm squares */
+            grid-gap: 20px;
+            margin: 40px auto;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .square-block {
+            width: 5cm;
+            height: 5cm;
+            background-color: #4CAF50;
+            border: 2px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .content h1 {
@@ -211,6 +234,10 @@
 
             .news-block p {
                 font-size: 14px;
+            }
+
+            .square-blocks {
+                grid-template-columns: repeat(1, 5cm); /* Stack blocks vertically on smaller screens */
             }
         }
     </style>
@@ -257,6 +284,14 @@
         </div>
     </div>
 
+    <!-- Square Blocks -->
+    <div class="square-blocks">
+        <div class="square-block">Block 1</div>
+        <div class="square-block">Block 2</div>
+        <div class="square-block">Block 3</div>
+        <div class="square-block">Block 4</div>
+    </div>
+
     <div class="external-link">
         <p class="external-text">قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
         <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank" class="external-link-text">اضغط هنا لتسجيل الدخول</a>
@@ -286,7 +321,7 @@
                     "en": "Weather Alert: Heavy rain expected in some areas tomorrow."
                 },
                 ".news-4": {
-                    "ar": "Sports: Local team wins the championship!",
+                    "ar": "فريقنا يحقق البطولة:الرياضة",
                     "en": "Sports: Local team wins the championship!"
                 },
                 ".achievement-title": {
