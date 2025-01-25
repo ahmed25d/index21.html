@@ -206,6 +206,28 @@
             font-weight: bold;
         }
 
+        /* Rectangle Blocks */
+        .rectangle-blocks {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .rectangle-block {
+            width: 5cm;
+            height: 12cm;
+            background-color: #2196F3;
+            border: 2px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .content h1 {
@@ -238,6 +260,11 @@
 
             .square-blocks {
                 grid-template-columns: repeat(1, 5cm); /* Stack blocks vertically on smaller screens */
+            }
+
+            .rectangle-blocks {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -292,6 +319,12 @@
         <div class="square-block">Block 4</div>
     </div>
 
+    <!-- Rectangle Blocks -->
+    <div class="rectangle-blocks">
+        <div class="rectangle-block">Rectangle 1</div>
+        <div class="rectangle-block">Rectangle 2</div>
+    </div>
+
     <div class="external-link">
         <p class="external-text">قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
         <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank" class="external-link-text">اضغط هنا لتسجيل الدخول</a>
@@ -313,53 +346,4 @@
                     "en": "Latest News: School wins first place in the olympiad!"
                 },
                 ".news-2": {
-                    "ar": "احدث الفعاليات: انشطة منتوعة و ابداع متجدد!",
-                    "en": "Upcoming events: Diverse activities and renewed creativity!"
-                },
-                ".news-3": {
-                    "ar": "Weather Alert: Heavy rain expected in some areas tomorrow.",
-                    "en": "Weather Alert: Heavy rain expected in some areas tomorrow."
-                },
-                ".news-4": {
-                    "ar": "فريقنا يحقق البطولة:الرياضة",
-                    "en": "Sports: Local team wins the championship!"
-                },
-                ".achievement-title": {
-                    "ar": "انجازات",
-                    "en": "Achievements"
-                },
-                ".achievement-text": {
-                    "ar": "الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.",
-                    "en": "Students achieve amazing accomplishments in summer activities."
-                },
-                ".external-text": {
-                    "ar": "قم بزيارة صفحة تسجيل الدخول الخاصة بنا:",
-                    "en": "Visit our login page:"
-                },
-                ".external-link-text": {
-                    "ar": "اضغط هنا لتسجيل الدخول",
-                    "en": "Click here to log in"
-                },
-                ".heading": {
-                    "ar": "اهلا بكم في مدرسة المشكاة",
-                    "en": "Welcome to Al-Mishkat School"
-                }
-            };
-
-            // Update all elements
-            for (const selector in elements) {
-                const element = document.querySelector(selector);
-                if (element) {
-                    element.textContent = elements[selector][languageText];
-                }
-            }
-
-            // Update sidebar blocks
-            const sidebarBlocks = document.querySelectorAll('.sidebar-block');
-            sidebarBlocks.forEach(block => {
-                block.textContent = block.getAttribute(`data-${languageText}`);
-            });
-        }
-    </script>
-</body>
-</html>
+                    "ar": "احدث الفعاليات: انشطة منتوعة و ابداع مت
