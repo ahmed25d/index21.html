@@ -25,16 +25,25 @@
             top: 10px;
             right: 10px;
             z-index: 1100;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .language-toggle button {
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #e0fc0a;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
+        .language-toggle:hover {
+            background-color: #f0f0f0;
+        }
+
+        .language-toggle img {
+            width: 30px;
+            height: 30px;
         }
 
         .news-bar {
@@ -98,15 +107,10 @@
         .news-block {
             width: 90%;
             max-width: 300px;
-            height: auto;
             background-color: #e0fc0a;
             border: 1px solid #ccc;
             padding: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
         }
 
@@ -128,7 +132,7 @@
             width: 70px;
             height: calc(100% - 70px);
             background-color: #342628;
-            overflow-y: auto;
+            overflow-y: auto; /* Enable scrolling */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -212,108 +216,58 @@
     </style>
 </head>
 <body>
-    <div class="language-toggle">
-        <button id="language-toggle-btn">Switch to English</button>
+    <!-- Language Toggle Button -->
+    <div class="language-toggle" onclick="toggleLanguage()">
+        <img src="https://cdn-icons-png.flaticon.com/512/3872/3872596.png" alt="Switch Language">
     </div>
 
     <div class="news-bar">
-        <div class="news-bar-content" id="news-bar-content">
+        <div class="news-bar-content">
             <span>اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!</span>
             <span>احدث الفعاليات: انشطة منتوعة و ابداع متجدد!</span>
-            <span>تحذير الطقس: أمطار غزيرة متوقعة غداً في بعض المناطق.</span>
-            <span>الرياضة: الفريق المحلي يفوز بالبطولة!</span>
+            <span>Weather Alert: Heavy rain expected in some areas tomorrow.</span>
+            <span>Sports: Local team wins the championship!</span>
         </div>
     </div>
 
-    <div class="sidebar left-sidebar" id="left-sidebar">
-        <a href="#" class="sidebar-block">التسجيل الالكتروني</a>
-        <a href="#" class="sidebar-block">الحصص الاقتراضية</a>
-        <a href="#" class="sidebar-block">احصائيات</a>
-        <a href="#" class="sidebar-block">كورسات اضافية</a>
+    <div class="sidebar left-sidebar">
+        <!-- Add left sidebar blocks here -->
     </div>
 
-    <div class="sidebar right-sidebar" id="right-sidebar">
-        <a href="#" class="sidebar-block">بنوك الأسئلة</a>
-        <a href="#" class="sidebar-block">تقارير الغياب</a>
-        <a href="#" class="sidebar-block">تقارير الاختبارات</a>
-        <a href="#" class="sidebar-block">المعلمون</a>
+    <div class="sidebar right-sidebar">
+        <!-- Add right sidebar blocks here -->
     </div>
 
     <div class="content">
-        <h1 id="main-heading">اهلا بكم في مدرسة المشكاة</h1>
+        <h1>اهلا بكم في مدرسة المشكاة</h1>
     </div>
 
-    <div class="news-blocks" id="news-blocks">
+    <div class="news-blocks">
         <div class="news-block">
             <h3>انجازات</h3>
             <p>الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.</p>
         </div>
-        <div class="news-block">
-            <h3>التسجيل</h3>
-            <p>بدء تسجيل العام الدراسي الجديد الأسبوع المقبل.</p>
-        </div>
+        <!-- Add more blocks here -->
+    </div>
+
+    <div class="external-link">
+        <p>قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
+        <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank">اضغط هنا لتسجيل الدخول</a>
     </div>
 
     <script>
-        const translations = {
-            en: {
-                "news-bar": [
-                    "Latest News: The school ranks first in the Olympics!",
-                    "Latest Events: Diverse activities and renewed creativity!",
-                    "Weather Alert: Heavy rain expected in some areas tomorrow.",
-                    "Sports: Local team wins the championship!"
-                ],
-                "left-sidebar": ["E-Registration", "Virtual Classes", "Statistics", "Additional Courses"],
-                "right-sidebar": ["Question Banks", "Attendance Reports", "Exam Reports", "Teachers"],
-                "main-heading": "Welcome to Al-Mishkat School",
-                "news-blocks": [
-                    { title: "Achievements", description: "Students achieve amazing results in summer activities." },
-                    { title: "Registration", description: "Registration for the new academic year starts next week." }
-                ]
-            },
-            ar: {
-                "news-bar": [
-                    "اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!",
-                    "احدث الفعاليات: انشطة منتوعة و ابداع متجدد!",
-                    "تحذير الطقس: أمطار غزيرة متوقعة غداً في بعض المناطق.",
-                    "الرياضة: الفريق المحلي يفوز بالبطولة!"
-                ],
-                "left-sidebar": ["التسجيل الالكتروني", "الحصص الاقتراضية", "احصائيات", "كورسات اضافية"],
-                "right-sidebar": ["بنوك الأسئلة", "تقارير الغياب", "تقارير الاختبارات", "المعلمون"],
-                "main-heading": "اهلا بكم في مدرسة المشكاة",
-                "news-blocks": [
-                    { title: "انجازات", description: "الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية." },
-                    { title: "التسجيل", description: "بدء تسجيل العام الدراسي الجديد الأسبوع المقبل." }
-                ]
+        function toggleLanguage() {
+            const html = document.documentElement;
+            if (html.lang === 'ar') {
+                html.lang = 'en';
+                document.body.style.fontFamily = 'Arial, sans-serif';
+                document.querySelector('.content h1').textContent = 'Welcome to Al-Mishkat School';
+            } else {
+                html.lang = 'ar';
+                document.body.style.fontFamily = 'FedraDisplayArabic, sans-serif';
+                document.querySelector('.content h1').textContent = 'اهلا بكم في مدرسة المشكاة';
             }
-        };
-
-        let currentLang = "ar";
-
-        document.getElementById("language-toggle-btn").addEventListener("click", () => {
-            currentLang = currentLang === "ar" ? "en" : "ar";
-            const langData = translations[currentLang];
-            
-            document.getElementById("news-bar-content").innerHTML = langData["news-bar"].map(news => `<span>${news}</span>`).join("");
-
-            const leftSidebar = document.getElementById("left-sidebar");
-            const rightSidebar = document.getElementById("right-sidebar");
-
-            leftSidebar.querySelectorAll(".sidebar-block").forEach((block, i) => block.textContent = langData["left-sidebar"][i]);
-            rightSidebar.querySelectorAll(".sidebar-block").forEach((block, i) => block.textContent = langData["right-sidebar"][i]);
-
-            document.getElementById("main-heading").textContent = langData["main-heading"];
-
-            const newsBlocks = document.getElementById("news-blocks");
-            newsBlocks.innerHTML = langData["news-blocks"].map(block => `
-                <div class="news-block">
-                    <h3>${block.title}</h3>
-                    <p>${block.description}</p>
-                </div>
-            `).join("");
-
-            document.getElementById("language-toggle-btn").textContent = currentLang === "ar" ? "Switch to English" : "التبديل إلى العربية";
-        });
+        }
     </script>
 </body>
 </html>
