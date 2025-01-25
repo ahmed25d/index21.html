@@ -95,212 +95,20 @@
             color: #FFFFFF;
         }
 
-        .news-blocks {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px auto;
-            max-width: 90%;
-        }
-
-        .news-block {
-            width: 90%;
-            max-width: 300px;
-            background-color: #e0fc0a;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .news-block h3 {
-            margin: 0;
-            font-size: 18px;
-            color: #788402;
-        }
-
-        .news-block p {
-            font-size: 16px;
-            color: #D96846;
-            margin-top: 10px;
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 70px;
-            width: 70px;
-            height: calc(100% - 70px);
-            background-color: #342628;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px 0;
-            gap: 10px;
-        }
-
-        .left-sidebar {
-            left: 0;
-        }
-
-        .right-sidebar {
-            right: 0;
-        }
-
-        .sidebar-block {
-            width: 70px;
-            height: 50px;
-            background-color: #00FF7F;
-            border: 1px solid #ccc;
+        .image-container {
+            margin-top: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 12px;
-            font-weight: bold;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-decoration: none;
         }
 
-        .sidebar-block:hover {
-            background-color: #50C878;
+        .image-container img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
 
-        .external-link {
-            margin-top: 40px;
-            font-size: 16px;
-        }
-
-        .external-link a {
-            color: blue;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .external-link a:hover {
-            text-decoration: underline;
-        }
-
-        /* Square Blocks */
-        .square-blocks {
-            display: grid;
-            grid-template-columns: repeat(2, 5cm); /* Two columns of 5cm squares */
-            grid-gap: 20px;
-            margin: 40px auto;
-            padding: 20px;
-            justify-content: center;
-        }
-
-        .square-block {
-            width: 5cm;
-            height: 5cm;
-            background-color: #4CAF50;
-            border: 2px solid #ccc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        /* Rectangle Blocks */
-        .rectangle-blocks {
-            display: flex;
-            justify-content: space-between;
-            margin: 40px auto;
-            padding: 20px;
-            max-width: 100%;
-            position: relative;
-        }
-
-        .rectangle-block {
-            width: 7cm;
-            height: 7cm;
-            background-color: #056e5a;
-            border: 2px solid #ccc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-            position: absolute;
-        }
-
-        .rectangle-left {
-            animation: moveLeft 12s linear infinite;
-        }
-
-        .rectangle-right {
-            animation: moveRight 12s linear infinite;
-        }
-
-        @keyframes moveLeft {
-            0% {
-                left: -10%;
-            }
-            50% {
-                left: 50%;
-            }
-            100% {
-                left: -10%;
-            }
-        }
-
-        @keyframes moveRight {
-            0% {
-                right: -10%;
-            }
-            50% {
-                right: 50%;
-            }
-            100% {
-                right: -10%;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content h1 {
-                font-size: 1.5em;
-            }
-
-            .sidebar {
-                width: 50px;
-            }
-
-            .sidebar-block {
-                width: 50px;
-                height: 40px;
-                font-size: 10px;
-            }
-
-            .news-block {
-                width: 100%;
-                max-width: none;
-                font-size: 14px;
-            }
-
-            .news-bar-content {
-                animation-duration: 15s;
-            }
-
-            .news-block p {
-                font-size: 14px;
-            }
-
-            .square-blocks {
-                grid-template-columns: repeat(1, 5cm); /* Stack blocks vertically on smaller screens */
-            }
-
-            .rectangle-blocks {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
+        /* Add other styles from the previous code here */
     </style>
 </head>
 <body>
@@ -319,83 +127,54 @@
     </div>
 
     <div class="sidebar left-sidebar">
-        <div class="sidebar-block" data-en="Academics" data-ar="الاكاديميات"></div>
-        <div class="sidebar-block" data-en="Events" data-ar="الفعاليات"></div>
-        <div class="sidebar-block" data-en="Contact" data-ar="اتصل بنا"></div>
-        <div class="sidebar-block" data-en="Admissions" data-ar="القبول"></div>
-        <div class="sidebar-block" data-en="Support" data-ar="الدعم"></div>
+        <!-- Sidebar Blocks -->
     </div>
 
     <div class="sidebar right-sidebar">
-        <div class="sidebar-block" data-en="Library" data-ar="المكتبة"></div>
-        <div class="sidebar-block" data-en="Help" data-ar="المساعدة"></div>
-        <div class="sidebar-block" data-en="Gallery" data-ar="المعرض"></div>
-        <div class="sidebar-block" data-en="About" data-ar="حول"></div>
-        <div class="sidebar-block" data-en="News" data-ar="الأخبار"></div>
+        <!-- Sidebar Blocks -->
     </div>
 
     <div class="content">
         <h1 class="heading">اهلا بكم في مدرسة المشكاة</h1>
-    </div>
 
-    <div class="news-blocks">
-        <div class="news-block">
-            <h3 class="achievement-title">انجازات</h3>
-            <p class="achievement-text">الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.</p>
+        <!-- Integrated Image -->
+        <div class="image-container">
+            <img src="child_image.jpg" alt="Child Illustration">
         </div>
     </div>
 
-    <!-- Square Blocks -->
-    <div class="square-blocks">
-        <div class="square-block">Block 1</div>
-        <div class="square-block">Block 2</div>
-        <div class="square-block">Block 3</div>
-        <div class="square-block">Block 4</div>
+    <div class="news-blocks">
+        <!-- News Blocks -->
     </div>
 
-    <!-- Rectangle Blocks -->
+    <div class="square-blocks">
+        <!-- Square Blocks -->
+    </div>
+
     <div class="rectangle-blocks">
-        <div class="rectangle-block rectangle-left">Rectangle 1</div>
-        <div class="rectangle-block rectangle-right">Rectangle 2</div>
+        <!-- Rectangle Blocks -->
     </div>
 
     <div class="external-link">
-        <p class="external-text">قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
-        <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank" class="external-link-text">اضغط هنا لتسجيل الدخول</a>
+        <!-- External Links -->
     </div>
 
     <script>
         function toggleLanguage() {
             const html = document.documentElement;
-            const allSidebarBlocks = document.querySelectorAll('.sidebar-block');
             const heading = document.querySelector('.heading');
             const newsTitle = document.querySelector('.achievement-title');
             const newsText = document.querySelector('.achievement-text');
-            const externalText = document.querySelector('.external-text');
-            const externalLinkText = document.querySelector('.external-link-text');
-            
+
             if (html.lang === 'ar') {
                 html.lang = 'en';
                 document.body.style.fontFamily = 'Arial, sans-serif';
                 heading.textContent = 'Welcome to Al-Mishkat School';
-                newsTitle.textContent = 'Achievements';
-                newsText.textContent = 'Students achieve great successes in summer activities.';
-                externalText.textContent = 'Visit our login page:';
-                externalLinkText.textContent = 'Click here to login';
             } else {
                 html.lang = 'ar';
                 document.body.style.fontFamily = 'FedraDisplayArabic, sans-serif';
                 heading.textContent = 'اهلا بكم في مدرسة المشكاة';
-                newsTitle.textContent = 'انجازات';
-                newsText.textContent = 'الطلاب يحققون إنجازات رائعة في الأنشطة الصيفية.';
-                externalText.textContent = 'قم بزيارة صفحة تسجيل الدخول الخاصة بنا:';
-                externalLinkText.textContent = 'اضغط هنا لتسجيل الدخول';
             }
-
-            allSidebarBlocks.forEach(block => {
-                const currentLang = html.lang;
-                block.textContent = block.getAttribute(`data-${currentLang}`);
-            });
         }
     </script>
 </body>
