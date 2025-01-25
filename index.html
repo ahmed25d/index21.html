@@ -174,6 +174,13 @@
             font-weight: bold;
             font-size: 1.2em;
         }
+
+        .sidebar img {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -191,16 +198,17 @@
 
     <!-- Sidebars -->
     <div class="sidebar left-sidebar">
-        <h2>القائمة اليمنى</h2>
+        <h2 class="sidebar-title">القائمة اليمنى</h2>
         <div class="block">تفاصيل ١</div>
         <div class="block">تفاصيل ٢</div>
         <div class="block">تفاصيل ٣</div>
         <div class="block">تفاصيل ٤</div>
         <div class="block">تفاصيل ٥</div>
+        <img src="image5.png" alt="Sidebar Image">
     </div>
 
     <div class="sidebar right-sidebar">
-        <h2>القائمة اليسرى</h2>
+        <h2 class="sidebar-title">القائمة اليسرى</h2>
         <div class="block">تفاصيل ٦</div>
         <div class="block">تفاصيل ٧</div>
         <div class="block">تفاصيل ٨</div>
@@ -231,16 +239,29 @@
     <script>
         function toggleLanguage() {
             const html = document.documentElement;
-            const heading = document.querySelector('.heading');
+            const headings = document.querySelectorAll('.sidebar-title, .heading');
+            const blocks = document.querySelectorAll('.block');
+            const externalText = document.querySelector('.external-text');
+            const externalLink = document.querySelector('.external-link-text');
 
             if (html.lang === 'ar') {
                 html.lang = 'en';
                 document.body.style.fontFamily = 'Arial, sans-serif';
-                heading.textContent = 'Welcome to Al-Mishkat School';
+                headings[0].textContent = 'Right Sidebar';
+                headings[1].textContent = 'Left Sidebar';
+                document.querySelector('.heading').textContent = 'Welcome to Al-Mishkat School';
+                blocks.forEach((block, index) => block.textContent = `Detail ${index + 1}`);
+                externalText.textContent = 'Visit our login page:';
+                externalLink.textContent = 'Click here to log in';
             } else {
                 html.lang = 'ar';
                 document.body.style.fontFamily = 'FedraDisplayArabic, sans-serif';
-                heading.textContent = 'اهلا بكم في مدرسة المشكاة';
+                headings[0].textContent = 'القائمة اليمنى';
+                headings[1].textContent = 'القائمة اليسرى';
+                document.querySelector('.heading').textContent = 'اهلا بكم في مدرسة المشكاة';
+                blocks.forEach((block, index) => block.textContent = `تفاصيل ${index + 1}`);
+                externalText.textContent = 'قم بزيارة صفحة تسجيل الدخول الخاصة بنا:';
+                externalLink.textContent = 'اضغط هنا لتسجيل الدخول';
             }
         }
     </script>
