@@ -20,78 +20,9 @@
             background-color: #d70e1d;
         }
 
-        /* Header styles */
-        .header {
-            background-color: #333;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1200;
-        }
-
-        .header .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        .header .nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        .header .nav-item {
-            position: relative;
-        }
-
-        .header .nav-item > a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1em;
-            padding: 10px;
-            transition: background-color 0.3s;
-        }
-
-        .header .nav-item > a:hover {
-            background-color: #555;
-            border-radius: 5px;
-        }
-
-        .header .dropdown {
-            position: absolute;
-            top: 40px;
-            left: 0;
-            background-color: #333;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            display: none;
-            flex-direction: column;
-            min-width: 150px;
-        }
-
-        .header .dropdown a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s;
-        }
-
-        .header .dropdown a:hover {
-            background-color: #555;
-        }
-
-        .header .nav-item:hover .dropdown {
-            display: flex;
-        }
-
-        /* Language toggle */
         .language-toggle {
             position: fixed;
-            top: 60px;
+            top: 10px;
             right: 10px;
             z-index: 1100;
             background-color: #fff;
@@ -115,7 +46,6 @@
             height: 30px;
         }
 
-        /* News bar */
         .news-bar {
             background-color: #555;
             color: yellow;
@@ -123,7 +53,7 @@
             white-space: nowrap;
             width: 100%;
             position: fixed;
-            top: 60px;
+            top: 60px; /* Adjusts below the header if one exists */
             left: 0;
             z-index: 1000;
             padding: 10px 0;
@@ -148,7 +78,7 @@
         }
 
         .content {
-            margin-top: 160px;
+            margin-top: 200px; /* Ensure content stays below the news bar */
             padding: 20px;
         }
 
@@ -180,7 +110,7 @@
 
         .sidebar {
             position: fixed;
-            top: 0;
+            top: 120px; /* Starts below the news bar */
             bottom: 0;
             width: 200px;
             background-color: #333;
@@ -208,13 +138,6 @@
             margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar img {
-            width: 100%;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         .rectangle-blocks {
@@ -251,40 +174,16 @@
             font-weight: bold;
             font-size: 1.2em;
         }
+
+        .sidebar img {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <div class="logo">مدرسة المشكاة</div>
-        <nav class="nav">
-            <div class="nav-item">
-                <a href="#">القسم ١</a>
-                <div class="dropdown">
-                    <a href="#">فرع ١-١</a>
-                    <a href="#">فرع ١-٢</a>
-                    <a href="#">فرع ١-٣</a>
-                </div>
-            </div>
-            <div class="nav-item">
-                <a href="#">القسم ٢</a>
-                <div class="dropdown">
-                    <a href="#">فرع ٢-١</a>
-                    <a href="#">فرع ٢-٢</a>
-                    <a href="#">فرع ٢-٣</a>
-                </div>
-            </div>
-            <div class="nav-item">
-                <a href="#">القسم ٣</a>
-                <div class="dropdown">
-                    <a href="#">فرع ٣-١</a>
-                    <a href="#">فرع ٣-٢</a>
-                    <a href="#">فرع ٣-٣</a>
-                </div>
-            </div>
-        </nav>
-    </div>
-
     <!-- Language Toggle Button -->
     <div class="language-toggle" onclick="toggleLanguage()">
         <img src="https://cdn-icons-png.flaticon.com/512/3872/3872596.png" alt="Switch Language">
