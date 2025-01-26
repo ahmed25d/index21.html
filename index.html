@@ -152,6 +152,7 @@
             margin-top: 20px;
             display: flex;
             justify-content: center;
+            position: relative;
         }
 
         .image-container img {
@@ -159,6 +160,8 @@
             width: 200px;
             height: 200px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
         }
 
         .square {
@@ -167,6 +170,15 @@
             background-color: #444;
             margin: 20px;
             display: inline-block;
+            position: absolute;
+        }
+
+        .square-left {
+            left: -60px; /* Positioning the left square */
+        }
+
+        .square-right {
+            right: -60px; /* Positioning the right square */
         }
 
         .sidebar {
@@ -364,9 +376,9 @@
     <div class="content">
         <h1 data-en="Welcome to Mishkatal School" data-ar="أهلاً بكم في مدرسة المشكاة"></h1>
         <div class="image-container">
-            <div class="square"></div>
+            <div class="square square-left"></div>
             <img src="uploaded_image.png" alt="Child Illustration">
-            <div class="square"></div>
+            <div class="square square-right"></div>
         </div>
         <div class="external-link">
             <p data-en="Visit our login page:" data-ar="قم بزيارة صفحة تسجيل الدخول الخاصة بنا:"></p>
