@@ -20,6 +20,7 @@
             background-color: #d70e1d;
         }
 
+        /* Header styles */
         .header {
             background-color: #333;
             color: white;
@@ -87,6 +88,34 @@
             display: flex;
         }
 
+        /* Language toggle */
+        .language-toggle {
+            position: fixed;
+            top: 60px;
+            right: 10px;
+            z-index: 1100;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-toggle:hover {
+            background-color: #f0f0f0;
+        }
+
+        .language-toggle img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* News bar */
         .news-bar {
             background-color: #555;
             color: yellow;
@@ -119,8 +148,34 @@
         }
 
         .content {
-            margin-top: 140px;
+            margin-top: 160px;
             padding: 20px;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .content h1 {
+            font-family: 'FedraDisplayArabic', Arial, sans-serif;
+            font-size: 2.5em;
+            color: #FFFFFF;
+        }
+
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-container img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         .sidebar {
@@ -142,11 +197,59 @@
             right: 0;
         }
 
+        .sidebar h2 {
+            color: yellow;
+        }
+
+        .block {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         .sidebar img {
             width: 100%;
             margin-top: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .rectangle-blocks {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .rectangle {
+            width: 250px;
+            height: 150px;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .external-link {
+            margin-top: 20px;
+        }
+
+        .external-link p {
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        .external-link a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
         }
     </style>
 </head>
@@ -182,6 +285,11 @@
         </nav>
     </div>
 
+    <!-- Language Toggle Button -->
+    <div class="language-toggle" onclick="toggleLanguage()">
+        <img src="https://cdn-icons-png.flaticon.com/512/3872/3872596.png" alt="Switch Language">
+    </div>
+
     <div class="news-bar">
         <div class="news-bar-content">
             <span class="news-1">اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!</span>
@@ -191,7 +299,7 @@
 
     <!-- Sidebars -->
     <div class="sidebar left-sidebar">
-        <h2>القائمة اليمنى</h2>
+        <h2 class="sidebar-title">القائمة اليمنى</h2>
         <div class="block">تفاصيل ١</div>
         <div class="block">تفاصيل ٢</div>
         <div class="block">تفاصيل ٣</div>
@@ -201,7 +309,7 @@
     </div>
 
     <div class="sidebar right-sidebar">
-        <h2>القائمة اليسرى</h2>
+        <h2 class="sidebar-title">القائمة اليسرى</h2>
         <div class="block">تفاصيل ٦</div>
         <div class="block">تفاصيل ٧</div>
         <div class="block">تفاصيل ٨</div>
@@ -217,5 +325,47 @@
             <img src="uploaded_image.png" alt="Child Illustration">
         </div>
     </div>
+
+    <!-- Rectangle Blocks -->
+    <div class="rectangle-blocks">
+        <div class="rectangle">مستطيل ١</div>
+        <div class="rectangle">مستطيل ٢</div>
+    </div>
+
+    <!-- External Link -->
+    <div class="external-link">
+        <p class="external-text">قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
+        <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank" class="external-link-text">اضغط هنا لتسجيل الدخول</a>
+    </div>
+
+    <script>
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const headings = document.querySelectorAll('.sidebar-title, .heading');
+            const blocks = document.querySelectorAll('.block');
+            const externalText = document.querySelector('.external-text');
+            const externalLink = document.querySelector('.external-link-text');
+
+            if (html.lang === 'ar') {
+                html.lang = 'en';
+                document.body.style.fontFamily = 'Arial, sans-serif';
+                headings[0].textContent = 'Right Sidebar';
+                headings[1].textContent = 'Left Sidebar';
+                document.querySelector('.heading').textContent = 'Welcome to Al-Mishkat School';
+                blocks.forEach((block, index) => block.textContent = `Detail ${index + 1}`);
+                externalText.textContent = 'Visit our login page:';
+                externalLink.textContent = 'Click here to log in';
+            } else {
+                html.lang = 'ar';
+                document.body.style.fontFamily = 'FedraDisplayArabic, sans-serif';
+                headings[0].textContent = 'القائمة اليمنى';
+                headings[1].textContent = 'القائمة اليسرى';
+                document.querySelector('.heading').textContent = 'اهلا بكم في مدرسة المشكاة';
+                blocks.forEach((block, index) => block.textContent = `تفاصيل ${index + 1}`);
+                externalText.textContent = 'قم بزيارة صفحة تسجيل الدخول الخاصة بنا:';
+                externalLink.textContent = 'اضغط هنا لتسجيل الدخول';
+            }
+        }
+    </script>
 </body>
 </html>
