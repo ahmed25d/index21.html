@@ -32,7 +32,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1100;
+            z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
@@ -108,7 +108,7 @@
             position: fixed;
             top: 60px; /* Adjusts below the header */
             left: 0;
-            z-index: 1000;
+            z-index: 900;
             padding: 10px 0;
         }
 
@@ -170,6 +170,7 @@
             color: white;
             overflow-y: auto;
             padding: 20px;
+            z-index: 800; /* Ensures visibility below header and news bar */
         }
 
         .left-sidebar {
@@ -244,63 +245,46 @@
                     <a href="#">فرع ٤</a>
                 </div>
             </div>
-            <div class="menu-item">
-                القسم ٤
-                <div class="dropdown">
-                    <a href="#">فرع ١</a>
-                    <a href="#">فرع ٢</a>
-                    <a href="#">فرع ٣</a>
-                    <a href="#">فرع ٤</a>
-                </div>
-            </div>
-            <div class="menu-item">
-                القسم ٥
-                <div class="dropdown">
-                    <a href="#">فرع ١</a>
-                    <a href="#">فرع ٢</a>
-                    <a href="#">فرع ٣</a>
-                    <a href="#">فرع ٤</a>
-                </div>
-            </div>
         </div>
         <div class="language-toggle" onclick="toggleLanguage()">
             <img src="https://cdn-icons-png.flaticon.com/512/3872/3872596.png" alt="Switch Language">
         </div>
     </div>
 
+    <!-- News Bar -->
+    <div class="news-bar">
+        <div class="news-bar-content">
+            <span>أحدث الأخبار: المدرسة تحقق المركز الأول!</span>
+            <span>فعاليات جديدة: الكثير من الأنشطة الرائعة!</span>
+        </div>
+    </div>
+
+    <!-- Left Sidebar -->
+    <div class="sidebar left-sidebar">
+        <h2>القائمة اليمنى</h2>
+        <div class="block">تفاصيل ١</div>
+        <div class="block">تفاصيل ٢</div>
+        <div class="block">تفاصيل ٣</div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="sidebar right-sidebar">
+        <h2>القائمة اليسرى</h2>
+        <div class="block">تفاصيل ٤</div>
+        <div class="block">تفاصيل ٥</div>
+        <div class="block">تفاصيل ٦</div>
+    </div>
+
     <!-- Main Content -->
     <div class="content">
-        <h1 class="heading">اهلا بكم في مدرسة المشكاة</h1>
+        <h1>أهلاً بكم في مدرسة المشكاة</h1>
         <div class="image-container">
             <img src="uploaded_image.png" alt="Child Illustration">
         </div>
         <div class="external-link">
-            <p class="external-text">قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
-            <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank" class="external-link-text">اضغط هنا لتسجيل الدخول</a>
+            <p>قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
+            <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank">اضغط هنا لتسجيل الدخول</a>
         </div>
     </div>
-
-    <script>
-        function toggleLanguage() {
-            const html = document.documentElement;
-            const headings = document.querySelectorAll('.sidebar-title, .heading');
-            const externalText = document.querySelector('.external-text');
-            const externalLink = document.querySelector('.external-link-text');
-
-            if (html.lang === 'ar') {
-                html.lang = 'en';
-                document.body.style.fontFamily = 'Arial, sans-serif';
-                headings.forEach(h => h.textContent = 'Welcome to Al-Mishkat School');
-                externalText.textContent = 'Visit our login page:';
-                externalLink.textContent = 'Click here to log in';
-            } else {
-                html.lang = 'ar';
-                document.body.style.fontFamily = 'FedraDisplayArabic, sans-serif';
-                headings.forEach(h => h.textContent = 'اهلا بكم في مدرسة المشكاة');
-                externalText.textContent = 'قم بزيارة صفحة تسجيل الدخول الخاصة بنا:';
-                externalLink.textContent = 'اضغط هنا لتسجيل الدخول';
-            }
-        }
-    </script>
 </body>
 </html>
