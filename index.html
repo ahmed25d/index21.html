@@ -216,6 +216,57 @@
             font-weight: bold;
             font-size: 1.2em;
         }
+
+        /* Media Queries for Mobile Devices */
+        @media only screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .header .menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .news-bar {
+                font-size: 0.9em;
+                top: 60px;
+            }
+
+            .content h1 {
+                font-size: 1.8em;
+            }
+
+            .image-container img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                top: auto;
+                bottom: auto;
+            }
+
+            .left-sidebar, .right-sidebar {
+                width: 100%;
+            }
+
+            .block {
+                margin-bottom: 15px;
+            }
+
+            .external-link p {
+                font-size: 1em;
+            }
+
+            .external-link a {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
