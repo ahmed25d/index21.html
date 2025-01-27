@@ -169,19 +169,16 @@
             height: 5cm;
             background-color: #444;
             margin: 20px;
+            display: inline-block;
             position: absolute;
         }
 
         .square-left {
-            left: -100px; /* Adjusting left positioning */
-            top: 50%;
-            transform: translateY(-50%);
+            left: -60px; /* Positioning the left square */
         }
 
         .square-right {
-            right: -100px; /* Adjusting right positioning */
-            top: 50%;
-            transform: translateY(-50%);
+            right: -60px; /* Positioning the right square */
         }
 
         .sidebar {
@@ -228,7 +225,7 @@
             margin-top: 40px;
         }
 
-        .external-link p, .external-link a {
+        .external-link p {
             color: #fff;
             font-size: 1.2em;
         }
@@ -237,6 +234,7 @@
             color: yellow;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2em;
         }
 
         /* Media Queries for Mobile Devices */
@@ -298,8 +296,7 @@
             <img src="logo.png" alt="Logo">
         </div>
         <div class="menu">
-            <div class="menu-item">
-                <span>Section 1</span>
+            <div class="menu-item" data-en="Section 1" data-ar="القسم ١">
                 <div class="dropdown">
                     <a href="#">Subsection 1.1</a>
                     <a href="#">Subsection 1.2</a>
@@ -307,8 +304,7 @@
                     <a href="#">Subsection 1.4</a>
                 </div>
             </div>
-            <div class="menu-item">
-                <span>Section 2</span>
+            <div class="menu-item" data-en="Section 2" data-ar="القسم ٢">
                 <div class="dropdown">
                     <a href="#">Subsection 2.1</a>
                     <a href="#">Subsection 2.2</a>
@@ -316,8 +312,7 @@
                     <a href="#">Subsection 2.4</a>
                 </div>
             </div>
-            <div class="menu-item">
-                <span>Section 3</span>
+            <div class="menu-item" data-en="Section 3" data-ar="القسم ٣">
                 <div class="dropdown">
                     <a href="#">Subsection 3.1</a>
                     <a href="#">Subsection 3.2</a>
@@ -325,75 +320,90 @@
                     <a href="#">Subsection 3.4</a>
                 </div>
             </div>
+            <div class="menu-item" data-en="Section 4" data-ar="القسم ٤">
+                <div class="dropdown">
+                    <a href="#">Subsection 4.1</a>
+                    <a href="#">Subsection 4.2</a>
+                    <a href="#">Subsection 4.3</a>
+                    <a href="#">Subsection 4.4</a>
+                </div>
+            </div>
+            <div class="menu-item" data-en="Section 5" data-ar="القسم ٥">
+                <div class="dropdown">
+                    <a href="#">Subsection 5.1</a>
+                    <a href="#">Subsection 5.2</a>
+                    <a href="#">Subsection 5.3</a>
+                    <a href="#">Subsection 5.4</a>
+                </div>
+            </div>
         </div>
-        <div class="language-toggle">
-            <img src="lang_icon.png" alt="Language Toggle">
+        <div class="language-toggle" onclick="toggleLanguage()">
+            <img src="https://cdn-icons-png.flaticon.com/512/3872/3872596.png" alt="Switch Language">
         </div>
     </div>
 
     <!-- News Bar -->
     <div class="news-bar">
         <div class="news-bar-content">
-            <span>News 1</span>
-            <span>News 2</span>
-            <span>News 3</span>
+            <span data-en="Latest News: School achieves first place!" data-ar="أحدث الأخبار: المدرسة تحقق المركز الأول!"></span>
+            <span data-en="New Events: Lots of amazing activities!" data-ar="فعاليات جديدة: الكثير من الأنشطة الرائعة!"></span>
         </div>
     </div>
 
     <!-- Left Sidebar -->
     <div class="sidebar left-sidebar">
-        <h2>الملخصات</h2>
-        <div class="block">
-            <h3>القسم الأول</h3>
-            <p>ملخص القسم الأول.</p>
-        </div>
-        <div class="block">
-            <h3>القسم الثاني</h3>
-            <p>ملخص القسم الثاني.</p>
-        </div>
-        <div class="block">
-            <h3>القسم الثالث</h3>
-            <p>ملخص القسم الثالث.</p>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="content">
-        <h1>مرحبا بكم في الصفحة الرئيسية</h1>
-        <div class="image-container">
-            <div class="square square-left"></div>
-            <img src="profile.jpg" alt="Profile Picture">
-            <div class="square square-right"></div>
-        </div>
+        <h2 data-en="Left Sidebar" data-ar="القائمة اليمنى"></h2>
+        <div class="block" data-en="Details 1" data-ar="تفاصيل ١"></div>
+        <div class="block" data-en="Details 2" data-ar="تفاصيل ٢"></div>
+        <div class="block" data-en="Details 3" data-ar="تفاصيل ٣"></div>
+        <div class="block" data-en="Details 4" data-ar="تفاصيل ٤"></div>
+        <div class="block" data-en="Details 5" data-ar="تفاصيل ٥"></div>
+        <img src="image5.png" alt="Sidebar Image 1">
     </div>
 
     <!-- Right Sidebar -->
     <div class="sidebar right-sidebar">
-        <h2>العناوين</h2>
-        <div class="block">
-            <h3>عنوان ١</h3>
-            <p>نصوص عنوان ١.</p>
-        </div>
-        <div class="block">
-            <h3>عنوان ٢</h3>
-            <p>نصوص عنوان ٢.</p>
-        </div>
-        <div class="block">
-            <h3>عنوان ٣</h3>
-            <p>نصوص عنوان ٣.</p>
-        </div>
+        <h2 data-en="Right Sidebar" data-ar="القائمة اليسرى"></h2>
+        <div class="block" data-en="Details 6" data-ar="تفاصيل ٦"></div>
+        <div class="block" data-en="Details 7" data-ar="تفاصيل ٧"></div>
+        <div class="block" data-en="Details 8" data-ar="تفاصيل ٨"></div>
+        <div class="block" data-en="Details 9" data-ar="تفاصيل ٩"></div>
+        <div class="block" data-en="Details 10" data-ar="تفاصيل ١٠"></div>
+        <img src="image6.png" alt="Sidebar Image 2">
+    </div>
 
-        <!-- External Links -->
-        <div class="external-link">
-            <p data-en="For more information, visit the link below:" data-ar="للمزيد من المعلومات، قم بزيارة الرابط التالي:">For more information, visit the link below:</p>
-            <a href="#" target="_blank" data-en="Click here" data-ar="اضغط هنا">Click here</a>
+    <!-- Main Content -->
+    <div class="content">
+        <h1 data-en="Welcome to Mishkatal School" data-ar="أهلاً بكم في مدرسة المشكاة"></h1>
+        <div class="image-container">
+            <div class="square square-left"></div>
+            <img src="uploaded_image.png" alt="Child Illustration">
+            <div class="square square-right"></div>
         </div>
-
-        <!-- Login Section -->
         <div class="external-link">
-            <p data-en="Visit our login page:" data-ar="قم بزيارة صفحة تسجيل الدخول الخاصة بنا:">Visit our login page:</p>
-            <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank" data-en="Click here to login" data-ar="اضغط هنا لتسجيل الدخول">Click here to login</a>
+            <p data-en="Visit our login page:" data-ar="قم بزيارة صفحة تسجيل الدخول الخاصة بنا:"></p>
+            <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank" data-en="Click here to login" data-ar="اضغط هنا لتسجيل الدخول"></a>
         </div>
     </div>
+
+    <script>
+        function toggleLanguage() {
+            const elements = document.querySelectorAll('[data-en], [data-ar]');
+            const isArabic = document.documentElement.lang === 'ar';
+
+            elements.forEach((el) => {
+                const enText = el.getAttribute('data-en');
+                const arText = el.getAttribute('data-ar');
+                
+                if (isArabic) {
+                    el.innerText = enText || el.innerText;
+                    document.documentElement.lang = 'en';
+                } else {
+                    el.innerText = arText || el.innerText;
+                    document.documentElement.lang = 'ar';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
