@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Double Sidebar Page</title>
+    <title>Double Sidebar Page with Subsections</title>
     <style>
         @font-face {
             font-family: 'FedraDisplayArabic';
@@ -18,6 +18,9 @@
             font-family: FedraDisplayArabic, sans-serif;
             text-align: center;
             background-color: #d70e1d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Header styles */
@@ -287,6 +290,16 @@
                 font-size: 1em;
             }
         }
+
+        /* Styles for subsections */
+        .subsection {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -385,6 +398,18 @@
             <p data-en="Visit our login page:" data-ar="قم بزيارة صفحة تسجيل الدخول الخاصة بنا:"></p>
             <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank" data-en="Click here to login" data-ar="اضغط هنا لتسجيل الدخول"></a>
         </div>
+
+        <!-- Subsections -->
+        <h1>Main Section</h1>
+        <div class="subsection">
+            <h2>Subsection 1</h2>
+            <p>This is the content of subsection 1.</p>
+        </div>
+        <div class="subsection">
+            <h2>Subsection 2</h2>
+            <p>This is the content of subsection 2.</p>
+        </div>
+        <!-- Add more subsections as needed -->
     </div>
 
     <script>
