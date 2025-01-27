@@ -142,10 +142,23 @@
             margin: 0 auto;
         }
 
-        .content h1 {
+        .content h1, .content h2 {
             font-family: 'FedraDisplayArabic', Arial, sans-serif;
-            font-size: 2.5em;
             color: #FFFFFF;
+        }
+
+        .content h1 {
+            font-size: 2.5em;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            color: #ffffff;
         }
 
         .image-container {
@@ -301,92 +314,157 @@
             <div class="menu-item">
                 <span>Section 1</span>
                 <div class="dropdown">
-                    <a href="#">Subsection 1.1</a>
-                    <a href="#">Subsection 1.2</a>
-                    <a href="#">Subsection 1.3</a>
-                    <a href="#">Subsection 1.4</a>
+                    <a href="#section1-1">Subsection 1.1</a>
+                    <a href="#section1-2">Subsection 1.2</a>
+                    <a href="#section1-3">Subsection 1.3</a>
+                    <a href="#section1-4">Subsection 1.4</a>
                 </div>
             </div>
             <div class="menu-item">
                 <span>Section 2</span>
                 <div class="dropdown">
-                    <a href="#">Subsection 2.1</a>
-                    <a href="#">Subsection 2.2</a>
-                    <a href="#">Subsection 2.3</a>
-                    <a href="#">Subsection 2.4</a>
+                    <a href="#section2-1">Subsection 2.1</a>
+                    <a href="#section2-2">Subsection 2.2</a>
+                    <a href="#section2-3">Subsection 2.3</a>
+                    <a href="#section2-4">Subsection 2.4</a>
                 </div>
             </div>
             <div class="menu-item">
                 <span>Section 3</span>
                 <div class="dropdown">
-                    <a href="#">Subsection 3.1</a>
-                    <a href="#">Subsection 3.2</a>
-                    <a href="#">Subsection 3.3</a>
-                    <a href="#">Subsection 3.4</a>
+                    <a href="#section3-1">Subsection 3.1</a>
+                    <a href="#section3-2">Subsection 3.2</a>
+                    <a href="#section3-3">Subsection 3.3</a>
+                    <a href="#section3-4">Subsection 3.4</a>
                 </div>
             </div>
         </div>
         <div class="language-toggle">
-            <img src="lang_icon.png" alt="Language Toggle">
+            <img src="toggle.png" alt="Language Toggle">
         </div>
     </div>
 
     <!-- News Bar -->
     <div class="news-bar">
         <div class="news-bar-content">
-            <span>News 1</span>
-            <span>News 2</span>
-            <span>News 3</span>
+            <span>Latest News 1</span>
+            <span>Latest News 2</span>
+            <span>Latest News 3</span>
         </div>
     </div>
 
     <!-- Left Sidebar -->
     <div class="sidebar left-sidebar">
-        <h2>الملخصات</h2>
+        <h2>Sidebar Navigation</h2>
         <div class="block">
-            <h3>القسم الأول</h3>
-            <p>ملخص القسم الأول.</p>
+            <a href="#section1">Section 1</a>
         </div>
         <div class="block">
-            <h3>القسم الثاني</h3>
-            <p>ملخص القسم الثاني.</p>
+            <a href="#section2">Section 2</a>
         </div>
         <div class="block">
-            <h3>القسم الثالث</h3>
-            <p>ملخص القسم الثالث.</p>
+            <a href="#section3">Section 3</a>
         </div>
     </div>
 
     <!-- Main Content -->
     <div class="content">
-        <h1>مرحبا بكم في الصفحة الرئيسية</h1>
-        <div class="image-container">
-            <div class="square square-left"></div>
-            <img src="profile.jpg" alt="Profile Picture">
-            <div class="square square-right"></div>
-        </div>
+        <section id="section1">
+            <h1>Section 1</h1>
+            <p>This is the content for Section 1.</p>
+
+            <section id="section1-1">
+                <h2>Subsection 1.1</h2>
+                <p>Content for Subsection 1.1</p>
+            </section>
+
+            <section id="section1-2">
+                <h2>Subsection 1.2</h2>
+                <p>Content for Subsection 1.2</p>
+            </section>
+
+            <section id="section1-3">
+                <h2>Subsection 1.3</h2>
+                <p>Content for Subsection 1.3</p>
+            </section>
+
+            <section id="section1-4">
+                <h2>Subsection 1.4</h2>
+                <p>Content for Subsection 1.4</p>
+            </section>
+        </section>
+
+        <section id="section2">
+            <h1>Section 2</h1>
+            <p>This is the content for Section 2.</p>
+
+            <section id="section2-1">
+                <h2>Subsection 2.1</h2>
+                <p>Content for Subsection 2.1</p>
+            </section>
+
+            <section id="section2-2">
+                <h2>Subsection 2.2</h2>
+                <p>Content for Subsection 2.2</p>
+            </section>
+
+            <section id="section2-3">
+                <h2>Subsection 2.3</h2>
+                <p>Content for Subsection 2.3</p>
+            </section>
+
+            <section id="section2-4">
+                <h2>Subsection 2.4</h2>
+                <p>Content for Subsection 2.4</p>
+            </section>
+        </section>
+
+        <section id="section3">
+            <h1>Section 3</h1>
+            <p>This is the content for Section 3.</p>
+
+            <section id="section3-1">
+                <h2>Subsection 3.1</h2>
+                <p>Content for Subsection 3.1</p>
+            </section>
+
+            <section id="section3-2">
+                <h2>Subsection 3.2</h2>
+                <p>Content for Subsection 3.2</p>
+            </section>
+
+            <section id="section3-3">
+                <h2>Subsection 3.3</h2>
+                <p>Content for Subsection 3.3</p>
+            </section>
+
+            <section id="section3-4">
+                <h2>Subsection 3.4</h2>
+                <p>Content for Subsection 3.4</p>
+            </section>
+        </section>
     </div>
 
     <!-- Right Sidebar -->
     <div class="sidebar right-sidebar">
-        <h2>العناوين</h2>
+        <h2>Additional Links</h2>
         <div class="block">
-            <h3>عنوان ١</h3>
-            <p>نصوص عنوان ١.</p>
+            <a href="#">External Link 1</a>
         </div>
         <div class="block">
-            <h3>عنوان ٢</h3>
-            <p>نصوص عنوان ٢.</p>
+            <a href="#">External Link 2</a>
+        </div>
+    </div>
+</body>
+</html>
+    <!-- Right Sidebar -->
+    <div class="sidebar right-sidebar">
+        <h2>Additional Links</h2>
+        <div class="block">
+            <a href="#">External Link 1</a>
         </div>
         <div class="block">
-            <h3>عنوان ٣</h3>
-            <p>نصوص عنوان ٣.</p>
-        </div>
-
-        <!-- External Links -->
-        <div class="external-link">
-            <p data-en="For more information, visit the link below:" data-ar="للمزيد من المعلومات، قم بزيارة الرابط التالي:">For more information, visit the link below:</p>
-            <a href="#" target="_blank" data-en="Click here" data-ar="اضغط هنا">Click here</a>
+            <a href="#">External Link 2</a>
         </div>
 
         <!-- Login Section -->
